@@ -8,24 +8,26 @@
 //   loader.classList.add("hiddenloader");
 
 // }
-
+// let desktop =
+// let mobile =
+// let tablet =
 // showLoader();
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   // hideLoader();
   document.querySelector(".page").classList.remove("hiddenloader");
 });
 
 let i = 0;
 let video = document.querySelector("#anim");
-let vidmobile = document.querySelector("#anim-mobile")
-let vidtablet =document.querySelector("#anim-tablet")
+let vidmobile = document.querySelector("#anim-mobile");
+let vidtablet = document.querySelector("#anim-tablet");
 
 setInterval(changeSrc, 80);
 
 function changeSrc() {
   video.src = "animation/testing" + i + ".jpg";
   vidmobile.src = "animation/testing-mobile" + i + ".jpg";
-    vidtablet.src="animation/test-tablet"+ i + ".jpg";
+  vidtablet.src = "animation/test-tablet" + i + ".jpg";
   i++;
   if (i > 57) {
     i = 0;

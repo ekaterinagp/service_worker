@@ -1,0 +1,21 @@
+{
+  "short_name": "Maps",
+  "name": "Google Maps",
+  "icons": [
+    {
+      "src": "/venus.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/selv.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/https://valsdottir.net/kea/3rd-semester/service_worker/",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/service_worker/",
+  "theme_color": "#3367D6"
+}
