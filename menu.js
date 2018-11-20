@@ -1,7 +1,7 @@
 window.onload = function() {
   if (navigator.serviceWorker) {
     navigator.serviceWorker
-      .register("./service-worker.js", { scope: "./about" })
+      .register("./service-worker.js")
       .then(function(registration) {
         console.log(registration);
       })
