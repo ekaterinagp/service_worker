@@ -2,7 +2,7 @@
 
 var CACHE_VERSION = "v1";
 var urlsToCache = [
-  // "/",
+  "/",
   "/style.css",
   "/artwork.html",
   "/cart.html",

@@ -3,19 +3,19 @@
   "name": "Google Maps",
   "icons": [
     {
-      "src": "/venus.png",
-      "type": "image/png",
+      "src": "img/logo_yellow.svg",
+      "type": "image/svg",
       "sizes": "192x192"
     },
     {
-      "src": "/selv.png",
-      "type": "image/png",
+      "src": "/logo_black.svg",
+      "type": "image/svg",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/https://valsdottir.net/kea/3rd-semester/service_worker/",
+  "start_url": "index.html",
   "background_color": "#3367D6",
   "display": "standalone",
-  "scope": "/service_worker/",
+  "scope": "https://ekaterinagp.dk/illustrator_sw/",
   "theme_color": "#3367D6"
 }

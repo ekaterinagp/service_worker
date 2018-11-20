@@ -3,12 +3,12 @@
   "name": "Google Maps",
   "icons": [
     {
-      "src": "/logo_yellow.svg",
+      "src": "img/logo_yellow.svg",
       "type": "image/svg",
       "sizes": "192x192"
     },
     {
-      "src": "/logo_black.svg",
+      "src": "img/logo_black.svg",
       "type": "image/svg",
       "sizes": "512x512"
     }
@@ -16,6 +16,6 @@
   "start_url": "index.html",
   "background_color": "#3367D6",
   "display": "standalone",
-  "scope": "/service_worker/",
+  "scope": "https://ekaterinagp.dk/illustrator_sw/",
   "theme_color": "#3367D6"
 }
