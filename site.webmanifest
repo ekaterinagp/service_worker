@@ -1,0 +1,21 @@
+{
+  "short_name": "Maps",
+  "name": "Google Maps",
+  "icons": [
+    {
+      "src": "img/logo_yellow.svg",
+      "type": "image/svg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/logo_black.svg",
+      "type": "image/svg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "https://ekaterinagp.dk/illustrator_sw/",
+  "theme_color": "#3367D6"
+}
