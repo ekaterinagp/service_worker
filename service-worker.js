@@ -1,10 +1,8 @@
-"use strict";
-
 var CACHE_VERSION = "v1";
 var urlsToCache = [
   "/",
   "style.css",
-  "artwork.html"
+  "artwork.html",
   "/cart.html",
   "/index.js",
   "/cart.js",
@@ -50,7 +48,10 @@ self.addEventListener("install", function(event) {
   event.waitUntil(
     caches.open(CACHE_VERSION).then(function(cache) {
       console.log("Opened cache");
-      return cache.addAll(urlsToCache);
+      return cache
+        .addAll(urlsToCache)
+        .then(() => console.log("Assets added to cache"))
+        .catch(err => console.log("Error while fetching assets", err));
     })
   );
 });
@@ -103,7 +104,7 @@ self.addEventListener("fetch", function(event) {
           if (response.status === 404) {
             return caches.match("fourohfour.html");
           }
-          return caches.open(cached_urls).then(function(cache) {
+          return caches.open(urlsToCache).then(function(cache) {
             cache.put(event.request.url, response.clone());
             return response;
           });
