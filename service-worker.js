@@ -56,38 +56,6 @@ self.addEventListener("install", function(event) {
   );
 });
 
-// self.addEventListener("fetch", function(event) {
-//   console.log("Fetch event for ", event.request.url);
-//   event.respondWith(
-//     caches.match(event.request).then(function(response) {
-//       console.log("fetch");
-//       // Cache hit - return response
-//       if (response) {
-//         return response;
-//       }
-//       requestBackend(event);
-//     })
-//   );
-// });
-
-// function requestBackend(event) {
-//   var url = event.request.clone();
-//   return fetch(url).then(function(res) {
-//     //if not a valid response send the error
-//     if (!res || res.status < 400 || res.type !== "basic") {
-//       return res;
-//     }
-
-//     var response = res.clone();
-
-//     caches.open(CACHE_VERSION).then(function(cache) {
-//       cache.put(event.request, response);
-//     });
-
-//     return res;
-//   });
-// }
-
 self.addEventListener("fetch", function(event) {
   console.log("Fetch event: ", event);
   console.log("Fetch event for ", event.request.url);
