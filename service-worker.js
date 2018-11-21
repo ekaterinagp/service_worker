@@ -3,45 +3,43 @@
 var CACHE_VERSION = "v1";
 var urlsToCache = [
   "/",
-  "style.css",
-  "artwork.html"
-  // "/cart.html",
-  // "/index.js",
-  // "/cart.js",
-  // "/about.html",
-  // "/anim.js",
-  // "/contact.html",
-  // "/gallery.js",
-  // "/index.html",
-  // "/loader.js",
-  // "/loader.html",
-  // "/recentart.js",
-  // "/menu.js",
-  // "/sendMail.php",
-  // "/sendEmail.php",
-  // "/subpage.html",
-  // "/subpage.js",
-  // "/thanks.html",
-  // "/img/bla.PNG",
-  // "/img/bla1.PNG",
-  // "/img/cart.png",
-  // "/img/fb.png",
-  // "/img/icons.png",
-  // "/img/inst.png",
-  // "/img/loader-01.svg",
-  // "/img/logo_black.svg",
-  // "/img/Logo_yellow.svg",
-  // "/img/no-image.png",
-  // "/img/piccc.png",
-  // "/img/selv.png",
-  // "/img/three_venus.png",
-  // "/img/venus.png",
-  // "/img/1.png",
-  // "/img/desktop.gif",
-  // "/img/mobile.gif",
-  // "/img/tablet.gif",
-  // "/fonts/jaapokki/regular/jaapokki-regular.otf",
-  // "/fonts/printclearly.otf"
+  "/style.css",
+  "/index.html"
+  // "artwork.html",
+  // "cart.html",
+  // "index.js",
+  // "cart.js",
+  // "about.html",
+  // "contact.html",
+  // "gallery.js",
+  // "loader.js",
+  // "recentart.js",
+  // "menu.js",
+  // "sendMail.php",
+  // "sendEmail.php",
+  // "subpage.html",
+  // "subpage.js",
+  // "thanks.html",
+  // "img/bla.PNG",
+  // "img/bla1.PNG",
+  // "img/cart.png",
+  // "img/fb.png",
+  // "img/icons.png",
+  // "img/inst.png",
+  // "img/loader-01.svg",
+  // "img/logo_black.svg",
+  // "img/Logo_yellow.svg",
+  // "img/no-image.png",
+  // "img/piccc.png",
+  // "img/selv.png",
+  // "img/three_venus.png",
+  // "img/venus.png",
+  // "img/1.png",
+  // "img/desktop.gif",
+  // "img/mobile.gif",
+  // "img/tablet.gif",
+  // "fonts/jaapokki/regular/jaapokki-regular.otf",
+  // "fonts/printclearly.otf"
 ];
 
 self.addEventListener("install", function(event) {
@@ -54,38 +52,6 @@ self.addEventListener("install", function(event) {
     })
   );
 });
-
-// self.addEventListener("fetch", function(event) {
-//   console.log("Fetch event for ", event.request.url);
-//   event.respondWith(
-//     caches.match(event.request).then(function(response) {
-//       console.log("fetch");
-//       // Cache hit - return response
-//       if (response) {
-//         return response;
-//       }
-//       requestBackend(event);
-//     })
-//   );
-// });
-
-// function requestBackend(event) {
-//   var url = event.request.clone();
-//   return fetch(url).then(function(res) {
-//     //if not a valid response send the error
-//     if (!res || res.status < 400 || res.type !== "basic") {
-//       return res;
-//     }
-
-//     var response = res.clone();
-
-//     caches.open(CACHE_VERSION).then(function(cache) {
-//       cache.put(event.request, response);
-//     });
-
-//     return res;
-//   });
-// }
 
 self.addEventListener("fetch", function(event) {
   console.log("Fetch event for ", event.request.url);
@@ -102,7 +68,7 @@ self.addEventListener("fetch", function(event) {
           if (response.status === 404) {
             return caches.match("fourohfour.html");
           }
-          return caches.open(cached_urls).then(function(cache) {
+          return caches.open(urlsToCache).then(function(cache) {
             cache.put(event.request.url, response.clone());
             return response;
           });

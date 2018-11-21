@@ -1,4 +1,5 @@
 window.onload = function() {
+  console.log("load");
   if (navigator.serviceWorker) {
     navigator.serviceWorker
       .register("./service-worker.js")
