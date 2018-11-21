@@ -1,3 +1,8 @@
+window.addEventListener("load", () => {
+  // hideLoader();
+  document.querySelector(".page").classList.remove("hiddenloader");
+});
+
 function fetchArtPieces() {
   fetch(
     "https://valsdottir.net/kea/07-cms/wordpress/wp-json/wp/v2/artist?_embed&per_page=3"

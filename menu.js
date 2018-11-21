@@ -12,7 +12,6 @@ window.onload = function() {
     console.log("Service Worker is not supported in this browser.");
   }
 };
-
 window.addEventListener("load", () => {
   let menuOpen = false;
   let menuIcon = document.querySelector(".menuIcon");
